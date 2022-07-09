@@ -3,3 +3,4 @@
 My configuration files.
 
 - Polybar
+- VSCode
