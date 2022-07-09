@@ -1,0 +1,19 @@
+{
+	// Intelijj snippet sout.
+	"sout": {
+		"scope": "c",
+		"prefix": "sout",
+		"body": [
+			"printf(\"$1\\n\"$2);"
+		],
+		"description": "sout to printf"
+	},
+	"include": {
+		"scope": "c",
+		"prefix": "inc",
+		"body": [
+			"#include $1"
+		],
+		"description": "include statement"
+	}
+}
