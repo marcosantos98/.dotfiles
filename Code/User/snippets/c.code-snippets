@@ -15,5 +15,21 @@
 			"#include $1"
 		],
 		"description": "include statement"
+	},
+	"fixme": {
+		"prefix": "fixme",
+		"body": [
+			"//fixme $CURRENT_YEAR_SHORT/$CURRENT_MONTH/$CURRENT_DATE: $1"
+		],
+		"description": "fixme"
+	},
+	"cmake": {
+		"prefix": "cmake",
+		"body": [
+			"cmake_minimum_required(VERSION 3.20)\n",
+			"project($1 C)\n",
+			"set(CMAKE_C_COMPILER \"cc\")",
+			"set(CMAKE_C_FLAGS \"-Wall -Wextra -std=c99 -pedantic\")\n"
+		]
 	}
 }
