@@ -2,6 +2,5 @@
 
 My configuration files.
 
-- Polybar
+- Polybar-Themes Forest: https://github.com/adi1090x/polybar-themes
 - VSCode
-- zsh
