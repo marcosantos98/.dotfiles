@@ -1,0 +1,48 @@
+{
+    "editor.fontFamily": "JetBrains Mono",
+    "editor.fontLigatures": true,
+    "editor.fontSize": 15,
+    "workbench.colorTheme": "Monochrome (GitHub Edition)",
+    "explorer.confirmDelete": false,
+    "cmake.configureOnOpen": false,
+    "workbench.iconTheme": "material-icon-theme",
+    "editor.tokenColorCustomizations": {
+        "textMateRules": [
+            {
+                "scope": "keyword",
+                "settings": {
+                    "fontStyle": "bold",
+                    "foreground": "#b69827"
+                }
+            },
+            {
+                "scope": "storage",
+                "settings": {
+                    "fontStyle": "bold",
+                    "foreground": "#b69827"
+                }
+            },
+            {
+                "scope": "constant.language",
+                "settings": {
+                    "fontStyle": "bold",
+                    "foreground": "#b69827"
+                }
+            },
+            {
+                "scope": "support.class.builtin",
+                "settings": {
+                    "fontStyle": "bold",
+                    "foreground": "#b69827"
+                }
+            },
+            {
+                "scope": "support.type",
+                "settings": {
+                    "fontStyle": "bold",
+                }
+            },
+        ]
+    },
+    "workbench.startupEditor": "none",
+}
