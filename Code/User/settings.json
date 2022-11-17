@@ -7,6 +7,7 @@
     "cmake.configureOnOpen": false,
     "workbench.iconTheme": "material-icon-theme",
     "editor.tokenColorCustomizations": {
+        "comments": "#0eb129",
         "textMateRules": [
             {
                 "scope": "keyword",
@@ -45,8 +46,23 @@
         ]
     },
     "workbench.startupEditor": "none",
+    "C_Cpp.autocompleteAddParentheses": true,
+    "C_Cpp.default.cppStandard": "c++20",
     "files.associations": {
         "*.nava": "java"
     },
-    "C_Cpp.autocompleteAddParentheses": true,
+    "git.ignoredRepositories": [
+        "/home/marco/.vscode/extensions/stepsize.stepsize-0.65.0/resources/demo-repository"
+    ],
+    "todo-tree.general.tags": [
+        "BUG",
+        "HACK",
+        "FIXME",
+        "TODO",
+        "XXX",
+        "[ ]",
+        "[x]",
+        "fixme"
+    ],
+    "java.inlayHints.parameterNames.enabled": "none",
 }
