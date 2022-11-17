@@ -35,3 +35,6 @@ fi
 unset color_prompt force_color_prompt
 
 alias gs='git status'
+alias gap='git add -p'
+
+alias ll='ls -la'
