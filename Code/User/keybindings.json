@@ -101,5 +101,13 @@
     {
         "key": "ctrl+b",
         "command": "editor.action.revealDeclaration"
+    },
+    {
+        "key": "ctrl+`",
+        "command": "workbench.action.toggleMaximizedPanel"
+    },
+    {
+        "key": "ctrl+shift+alt+n",
+        "command": "editor.action.transformToLowercase"
     }
 ]
