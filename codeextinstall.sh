@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-source ../../lib.sh
 
 code --install-extension vscjava.vscode-java-pack
 code --install-extension amatilda.vscode-fasm
