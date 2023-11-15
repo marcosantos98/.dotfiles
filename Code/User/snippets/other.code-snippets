@@ -25,5 +25,12 @@
 			"SOFTWARE."
 		],
 		"description": "Log output to console"
+	},
+	"azurmain": {
+		"prefix": "amain",
+		"body": [
+			"fn main() void {",
+			"}"
+		]
 	}
 }
