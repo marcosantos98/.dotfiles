@@ -8,3 +8,4 @@ code --install-extension tomphilbin.gruvbox-themes
 code --install-extension Gruntfuggly.todo-tree
 code --install-extension emeraldwalk.RunOnSave
 code --install-extension vlanguage.vscode-vlang
+code --install-extension ms-vscode.makefile-tools
