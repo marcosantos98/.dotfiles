@@ -12,5 +12,9 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup("plugins")
+require'lspconfig'.clangd.setup{}
+
 vim.g.v_autofmt_bufwritepre = true
 vim.wo.number = true
+vim.opt.sw = 4
+vim.opt.ts = 4

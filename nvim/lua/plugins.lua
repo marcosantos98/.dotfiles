@@ -1,5 +1,7 @@
 return {
+	'neoclide/coc.nvim',
 	'ollykel/v-vim',
+	'neovim/nvim-lspconfig',
 	{
     "iamcco/markdown-preview.nvim",
     cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
