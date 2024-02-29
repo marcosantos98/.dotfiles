@@ -1,11 +1,16 @@
 return {
-	'neoclide/coc.nvim',
 	'ollykel/v-vim',
-	'neovim/nvim-lspconfig',
+	'nvim-tree/nvim-tree.lua',
+	'nvim-tree/nvim-web-devicons',
+	'marcosantos98/clang-format.nvim',
+--	{
+--		dir = "~/dev/open/clang-format.nvim",
+--	},
 	{
-    "iamcco/markdown-preview.nvim",
-    cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
-    ft = { "markdown" },
-    build = function() vim.fn["mkdp#util#install"]() end,
-}
+        "kdheepak/lazygit.nvim",
+        -- optional for floating window border decoration
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+        },
+    },
 }
