@@ -16,6 +16,10 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup("plugins")
 require("nvim-tree").setup()
+require("clang-format").setup({
+	clangFormatPath = "/home/marco/.clang-format"
+}
+)
 
 vim.g.v_autofmt_bufwritepre = true
 vim.wo.number = true
