@@ -1,11 +1,15 @@
 return {
+	{ "ellisonleao/gruvbox.nvim", priority = 1000 , config = true, opts = ...},
 	'ollykel/v-vim',
 	'nvim-tree/nvim-tree.lua',
 	'nvim-tree/nvim-web-devicons',
-	'marcosantos98/clang-format.nvim',
---	{
---		dir = "~/dev/open/clang-format.nvim",
---	},
+	{
+		'neoclide/coc.nvim',
+		branch = "release"
+	},--'marcosantos98/clang-format.nvim',
+	{
+		dir = "~/dev/open/clang-format.nvim",
+	},
 	{
         "kdheepak/lazygit.nvim",
         -- optional for floating window border decoration
