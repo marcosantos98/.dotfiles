@@ -1,7 +1,0 @@
-{
-	"clangd.fallbackFlags": ["-std=c++20"],
-	"semanticTokens.enable": true,
-    "inlayHint.subSeparator": "︴",
-    "inlayHints.enableParameter": true,
-    "clangd.inlayHints.sep": "⇝"
-}
