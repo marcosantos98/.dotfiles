@@ -1,0 +1,18 @@
+#!/usr/bin/python3
+
+from pathlib import Path
+import os
+
+cwd = Path('.').resolve()
+
+# --working-directory
+pid = os.fork()
+if pid == -1:
+    print("Failed to fork")
+    os.exit(1)
+elif pid == 0:
+    os.execvp('alacritty', [f'--working-directory={cwd}'])
+    print("`execvp` failed bro")
+    os.exit(1)
+else:
+    print(f'Done. New shell at {cwd}.')
