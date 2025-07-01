@@ -21,8 +21,17 @@ vim.g.maplocalleader = "\\"
 -- Setup lazy.nvim
 require("lazy").setup({
   spec = {
-    { "ellisonleao/gruvbox.nvim", config = function() vim.cmd.colorscheme "gruvbox" end },
-    -- { "folke/tokyonight.nvim", config = function() vim.cmd.colorscheme "tokyonight" end },
+    { 'projekt0n/github-nvim-theme', config = function() 
+	    require('github-theme').setup({
+		options = {
+		    transparent = true,
+		}
+	    })    
+	    vim.cmd.colorscheme "github_light" 
+	end 
+    },
+    -- { "ellisonleao/gruvbox.nvim", config = function() vim.cmd.colorscheme "gruvbox" end },
+    --{ "folke/tokyonight.nvim", config = function() vim.cmd.colorscheme "tokyonight" end },
     { "echasnovski/mini.nvim", 
     	config = function()
 	    local statusline = require 'mini.statusline'
@@ -33,7 +42,7 @@ require("lazy").setup({
 	build = ":TSUpdate",
 	config = function()
 	    require'nvim-treesitter.configs'.setup {
-	      ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "markdown", "markdown_inline" },
+	      ensure_installed = { "rust", "odin", "c", "lua", "vim", "vimdoc", "query", "markdown", "markdown_inline" },
 	      auto_install = false,
 	      highlight = {
 	        enable = true,
@@ -96,6 +105,15 @@ require("lazy").setup({
 
 	    local caps = require('cmp_nvim_lsp').default_capabilities()
 	    require'lspconfig'.ols.setup{ capabilites = caps}
+	    require'lspconfig'.rust_analyzer.setup({
+		capabilites = caps,
+		settings = {
+		    ['rust-analyzer'] = {
+		        checkOnSave = { command = 'clippy' },
+		        cargo = { allFeatures = true },
+		    },
+		},
+	    })
 
 	    vim.api.nvim_create_autocmd('LspAttach', {
 		callback = function(args)
@@ -129,6 +147,8 @@ require("lazy").setup({
 		}
 	    end)
 	end
-    }
+    },
+    {"simrat39/rust-tools.nvim"}
+
   },
 })
