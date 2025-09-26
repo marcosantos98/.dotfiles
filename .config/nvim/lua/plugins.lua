@@ -21,16 +21,26 @@ vim.g.maplocalleader = "\\"
 -- Setup lazy.nvim
 require("lazy").setup({
   spec = {
-    { 'projekt0n/github-nvim-theme', config = function() 
-	    require('github-theme').setup({
-		options = {
-		    transparent = true,
-		}
-	    })    
-	    vim.cmd.colorscheme "github_light" 
-	end 
+    --{ 'projekt0n/github-nvim-theme', config = function() 
+    --        require('github-theme').setup({
+    --    	options = {
+    --    	    transparent = true,
+    --    	}
+    --        })    
+    --        vim.cmd.colorscheme "github_light" 
+    --    end 
+    --},
+    { "marcosantos98/clang-format.nvim", config = function()
+	require('clang-format').setup({
+	    clangFormatPath = "/home/marco/.clang-format",
+	})
+	end
     },
-    -- { "ellisonleao/gruvbox.nvim", config = function() vim.cmd.colorscheme "gruvbox" end },
+    { "ellisonleao/gruvbox.nvim", config = function() 
+	 require('gruvbox').setup({
+	     transparent_mode = true
+	 })
+	 vim.cmd.colorscheme "gruvbox" end },
     --{ "folke/tokyonight.nvim", config = function() vim.cmd.colorscheme "tokyonight" end },
     { "echasnovski/mini.nvim", 
     	config = function()
@@ -114,6 +124,7 @@ require("lazy").setup({
 		    },
 		},
 	    })
+	    require'lspconfig'.clangd.setup{capabilites = caps}
 
 	    vim.api.nvim_create_autocmd('LspAttach', {
 		callback = function(args)
@@ -148,7 +159,19 @@ require("lazy").setup({
 	    end)
 	end
     },
-    {"simrat39/rust-tools.nvim"}
-
+    {
+	"simrat39/rust-tools.nvim"
+    },
+    {
+      'stevearc/oil.nvim',
+      opts = {},
+      dependencies = { { "echasnovski/mini.icons", opts = {} } },
+      -- dependencies = { "nvim-tree/nvim-web-devicons" }, -- use if you prefer nvim-web-devicons
+      lazy = false,
+    },
+    {
+	enabled = false,
+	'github/copilot.vim',
+    }
   },
 })
