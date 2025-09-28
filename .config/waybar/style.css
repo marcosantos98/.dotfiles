@@ -6,24 +6,15 @@
 }
 
 window#waybar {
-    background-color: transparent; 
-    color: black;
+    background-color: black; 
+    color: white;
     transition-property: background-color;
     transition-duration: .5s;
 }
 
 window#waybar.hidden {
-    opacity: 0.2;
+    opacity: 0;
 }
-
-/*
-window#waybar.empty {
-    background-color: transparent;
-}
-window#waybar.solo {
-    background-color: #FFFFFF;
-}
-*/
 
 window#waybar.termite {
     background-color: #3F3F3F;
@@ -55,8 +46,8 @@ button:hover {
 
 #workspaces button {
     padding: 0 5px;
-    background-color: transparent;
-    color: black;
+    background-color: black;
+    color: white;
 }
 
 #workspaces button:hover {
@@ -64,8 +55,8 @@ button:hover {
 }
 
 #workspaces button.active {
-    background-color: black;
-    color:white;
+    background-color: white;
+    color:black;
     font-weight: bolder;
 }
 

@@ -10,6 +10,3 @@ import = [
     "~/.config/alacritty/themes/themes/github_light.toml"
 ] 
 
-[window]
-blur = true
-opacity = 0.9
