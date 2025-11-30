@@ -1,23 +1,24 @@
 // -*- mode: jsonc -*-
 {
-     //"layer": "top", // Waybar at top layer
-    //"position": "bottom", // Waybar position (top|bottom|left|right)
+    "layer": "top", // Waybar at top layer
     "height": 24, // Waybar height (to be removed for auto height)
-    // "width": 1280, // Waybar width
-    "spacing": 0, // Gaps between modules (4px)
-    // Choose the order of the modules
+    "spacing": 4, // Gaps between modules (4px)
+    "margin-top": 4,
+
     "modules-left": [
         "hyprland/workspaces",
-        "hyprland/window"
+        "custom/window_title"
     ],
     "modules-right": [
         "network",
-        "cpu",
-        "memory",
+	"custom/cpu_graph",
         "temperature",
-        "hyprland/language",
+        "memory",
         "clock"
     ],
+    "custom/window_title": {
+	"exec": "/home/marco/.config/waybar/scripts/window_title.sh"
+    },
     "hyprland/workspaces": {
 	"format": "{name}",
 	"persistent-workspaces": {
@@ -25,13 +26,15 @@
 	}
     },
     "clock": {
-        //"timezone": "America/New_York",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "format-alt": "{:%Y-%m-%d}"
     },
-    "cpu": {
-        "format": "{usage}% ",
-        "tooltip": false
+    "custom/cpu_graph": {
+	"format": "{}",
+	"exec": "/home/marco/.config/waybar/scripts/cpu_graph.sh",
+	"return-type": "json",
+	"interval": 1,
+	"tooltip": true
     },
     "memory": {
         "format": "{}% "

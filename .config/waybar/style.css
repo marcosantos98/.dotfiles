@@ -1,12 +1,13 @@
+@define-color bg_color #181818;
+
 * {
-    /* `otf-font-awesome` is required to be installed for icons */
     font-family: FontAwesome, "JetBrainsMono Nerd Font";
     font-size: 14px;
     font-weight: 500;
 }
 
 window#waybar {
-    background-color: black; 
+    background-color: transparent; 
     color: white;
     transition-property: background-color;
     transition-duration: .5s;
@@ -21,7 +22,7 @@ window#waybar.termite {
 }
 
 window#waybar.chromium {
-    background-color: #000000;
+    background-color: @bg_color;
     border: none;
 }
 
@@ -45,8 +46,10 @@ button:hover {
 }
 
 #workspaces button {
+    border-radius: 5px;
     padding: 0 5px;
-    background-color: black;
+    margin-right: 4px;
+    background-color: @bg_color;
     color: white;
 }
 
@@ -80,34 +83,55 @@ button:hover {
 #memory,
 #disk,
 #temperature,
-#network {
-    background-color: transparent;
+#network,
+#custom-cpu_graph {
+    background-color: @bg_color;
+    padding: 0 12px;
+    border-radius: 5px;
+}
+
+#clock {
+    margin-right: 10px;
+}
+
+#custom-window_title {
+    border-radius: 5px;
+    min-width: 200px;
+    background-color: @bg_color;
     padding: 0 12px;
 }
 
-#window,
+#custom-window_title.with-icon {
+    padding-left: 28px;
+}
+
+#custom-window_title.with-icon label {
+    background-size: 16px 16px;
+    background-repeat: no-repeat;
+    background-position: left center;
+    padding-left: 20px;
+}
+
+
 #workspaces {
-    margin: 0 4px;
-}
-
-/* If workspaces is the leftmost module, omit left margin */
-.modules-left > widget:first-child > #workspaces {
-    margin-left: 0;
-}
-
-/* If workspaces is the rightmost module, omit right margin */
-.modules-right > widget:last-child > #workspaces {
-    margin-right: 0;
+    border-radius: 5px;
+    padding-left: 12px;
 }
 
 label:focus {
-    background-color: #000000;
+    background-color: @bg_color;
 }
 
 #temperature.critical {
     background-color: #eb4d4b;
 }
 
-#language {
-    min-width: 16px;
+.module-left > widget:first-child > #workspaces {
+    margin-left: 0px;
+}
+
+tooltip {
+    background-color: @bg_color;
+    color: white;
+    padding: 8px;
 }
