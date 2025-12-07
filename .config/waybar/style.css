@@ -84,7 +84,8 @@ button:hover {
 #disk,
 #temperature,
 #network,
-#custom-cpu_graph {
+#custom-cpu_graph,
+#custom-media {
     background-color: @bg_color;
     padding: 0 12px;
     border-radius: 5px;

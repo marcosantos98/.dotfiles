@@ -10,12 +10,18 @@
         "custom/window_title"
     ],
     "modules-right": [
+	"custom/media",
         "network",
 	"custom/cpu_graph",
         "temperature",
         "memory",
         "clock"
     ],
+    "custom/media": {
+	"exec": "/home/marco/.config/waybar/scripts/media.sh",
+	"return-type": "json",
+	"format": "{}"
+    },
     "custom/window_title": {
 	"exec": "/home/marco/.config/waybar/scripts/window_title.sh"
     },
