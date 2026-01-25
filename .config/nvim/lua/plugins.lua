@@ -22,6 +22,16 @@ vim.g.maplocalleader = "\\"
 require("lazy").setup({
 	spec = {
 		{
+			"nvim-neo-tree/neo-tree.nvim",
+			branch = "v3.x",
+			dependencies = {
+				"nvim-lua/plenary.nvim",
+				"MunifTanjim/nui.nvim",
+				"nvim-tree/nvim-web-devicons", -- optional, but recommended
+			},
+			lazy = false,          -- neo-tree will lazily load itself
+		},
+		{
 			"ej-shafran/compile-mode.nvim",
 			version = "^5.0.0",
 			-- you can just use the latest version:
@@ -56,6 +66,7 @@ require("lazy").setup({
 			config = function()
 				require("themery").setup({
 					themes = {
+						"onedark",
 						"gruvbox",
 						"github_dark",
 						"tokyonight",
@@ -255,6 +266,16 @@ require("lazy").setup({
 			}
 		},
 		-- :theme
+		{
+			"navarasu/onedark.nvim",
+			priority = 1000, -- make sure to load this before all the other start plugins
+			config = function()
+				require('onedark').setup {
+					style = 'darker'
+				}
+				require('onedark').load()
+			end
+		},
 		{
 			"idr4n/github-monochrome.nvim",
 			lazy = false,
