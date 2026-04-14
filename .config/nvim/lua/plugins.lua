@@ -22,6 +22,34 @@ vim.g.maplocalleader = "\\"
 require("lazy").setup({
 	spec = {
 		{
+			'nvim-java/nvim-java',
+			config = function()
+				require('java').setup()
+			end,
+		},
+		{
+			"scalameta/nvim-metals",
+			ft = { "scala", "sbt" },
+			opts = function()
+				local metals_config = require("metals").bare_config()
+				metals_config.on_attach = function(client, bufnr)
+					-- your on_attach function
+				end
+
+				return metals_config
+			end,
+			config = function(self, metals_config)
+				local nvim_metals_group = vim.api.nvim_create_augroup("nvim-metals", { clear = true })
+				vim.api.nvim_create_autocmd("FileType", {
+					pattern = self.ft,
+					callback = function()
+						require("metals").initialize_or_attach(metals_config)
+					end,
+					group = nvim_metals_group,
+				})
+			end
+		},
+		{
 			"nvim-neo-tree/neo-tree.nvim",
 			branch = "v3.x",
 			dependencies = {
@@ -108,7 +136,7 @@ require("lazy").setup({
 			build = ":TSUpdate",
 			config = function()
 				require 'nvim-treesitter.configs'.setup {
-					ensure_installed = { "rust", "odin", "c", "lua", "vim", "vimdoc", "query", "markdown", "markdown_inline" },
+					ensure_installed = { "scala", "rust", "odin", "c", "lua", "vim", "vimdoc", "query", "markdown", "markdown_inline", "json", "java" },
 					auto_install = false,
 					highlight = {
 						enable = true,
@@ -193,6 +221,9 @@ require("lazy").setup({
 					"rust_analyzer",
 					"clangd",
 					"lua_ls",
+					"scalafmt",
+					"json",
+					"jdtls",
 				})
 
 				vim.api.nvim_create_autocmd('LspAttach', {

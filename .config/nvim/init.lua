@@ -22,4 +22,4 @@ vim.api.nvim_create_autocmd("CursorHold", {
 })
 
 vim.keymap.set("v", "<C-S-C>", '"+y', { noremap = true, silent = true })
-vim.cmd.colorscheme("github-monochrome-dark")
+vim.cmd.colorscheme("gruvbox")
