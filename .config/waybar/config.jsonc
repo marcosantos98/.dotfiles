@@ -10,6 +10,7 @@
         "custom/window_title"
     ],
     "modules-right": [
+	"custom/obs",
 	"custom/media",
         "network",
 	"custom/cpu_graph",
@@ -17,6 +18,15 @@
         "memory",
         "clock"
     ],
+    "custom/obs": {
+	"exec": "/home/marco/.config/waybar/scripts/obs.sh",
+	"return-type": "json",
+	"format": "{}",
+	"interval": 1,
+	"exec-on-event": false,
+	"hide-empty-text": true,
+	"on-click": "/home/marco/.config/waybar/scripts/obs_menu.sh"
+    },
     "custom/media": {
 	"exec": "/home/marco/.config/waybar/scripts/media.sh",
 	"return-type": "json",

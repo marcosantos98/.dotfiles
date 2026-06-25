@@ -85,10 +85,30 @@ button:hover {
 #temperature,
 #network,
 #custom-cpu_graph,
-#custom-media {
+#custom-media,
+#custom-obs {
     background-color: @bg_color;
     padding: 0 12px;
     border-radius: 5px;
+}
+
+#custom-obs.live {
+    color: #4caf50;
+}
+
+#custom-obs.off {
+    color: #e53935;
+}
+
+menu {
+    background-color: @bg_color;
+    color: white;
+    border-radius: 5px;
+}
+
+menuitem {
+    border-radius: 5px;
+    padding: 4px 8px;
 }
 
 #clock {
